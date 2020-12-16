@@ -6,3 +6,10 @@ export interface Todo {
 export interface Meta {
   totalCount: number;
 }
+
+export type Player = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  age: number
+}

@@ -6,8 +6,13 @@
   "author": "Pawel Nackiewicz <it.pnackiewicz@gmail.com>",
   "private": true,
   "scripts": {
+    "dev": "quasar dev",
+    "dev:ssr": "quasar dev -m ssr",
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "lint fix": "eslint --fix --ext .js,.ts,.vue src",
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build",
+    "build:ssr": "quasar build -m ssr"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
