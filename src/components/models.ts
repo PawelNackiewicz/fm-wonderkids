@@ -9,7 +9,13 @@ export interface Meta {
 
 export type Player = {
   id: string;
+  rating: number
   firstName: string;
   lastName: string;
-  age: number
+  age: number;
+  position: string;
+  club: string;
+  wage: number;
+  value: number;
+  nation: string;
 }
