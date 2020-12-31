@@ -4,7 +4,6 @@
       Player list
     </h2>
     <q-option-group
-      v-model="separator"
       inline
       class="q-mb-md"
     />
@@ -33,6 +32,7 @@
 <script lang="ts">
   import { PropType } from '@vue/composition-api';
   import { Player } from 'components/models';
+  import { PlayerRowTypes } from 'components/types';
 
   export default {
     name: 'PlayerList',
@@ -54,7 +54,7 @@
             label: 'First name',
             align: 'left',
             sortable: true,
-            field: row => row.firstName,
+            field: (row: PlayerRowTypes) => row.firstName,
             classes: 'bg-grey-2 ellipsis',
             headerClasses: 'bg-primary text-white'
           },
@@ -63,7 +63,7 @@
             align: 'center',
             label: 'Last name',
             sortable: true,
-            field: row => row.lastName,
+            field: (row: PlayerRowTypes) => row.lastName,
             classes: 'bg-grey-2 ellipsis',
             headerClasses: 'bg-primary text-white'
           },
@@ -72,7 +72,7 @@
             align: 'center',
             label: 'Rating',
             sortable: true,
-            field: row => row.rating,
+            field: (row: PlayerRowTypes) => row.rating,
             classes: 'bg-grey-2 ellipsis',
             headerClasses: 'bg-secondary text-white'
           },
