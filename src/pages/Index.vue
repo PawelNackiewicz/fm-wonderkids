@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-  import { Player } from 'components/models';
+  import { Player } from 'src/model/models';
   import { defineComponent, ref } from '@vue/composition-api';
   import PlayerList from 'components/playerList/PlayerList.vue';
 

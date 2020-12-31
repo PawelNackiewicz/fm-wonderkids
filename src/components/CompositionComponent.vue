@@ -16,7 +16,7 @@
 import {
   defineComponent, PropType, computed, ref, toRef, Ref,
 } from '@vue/composition-api';
-import { Todo, Meta } from './models';
+import { Todo, Meta } from '../model/models';
 
 function useClickCount() {
   const clickCount = ref(0);

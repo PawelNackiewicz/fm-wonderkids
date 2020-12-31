@@ -30,11 +30,42 @@
 </template>
 
 <script lang="ts">
-  import { PropType } from '@vue/composition-api';
-  import { Player } from 'components/models';
-  import { PlayerRowTypes } from 'components/types';
+  import { defineComponent, PropType } from '@vue/composition-api';
+  import { Player } from 'src/model/models';
+  import { PlayerRowTypes } from 'src/types/types';
 
-  export default {
+  const columns = [
+    {
+      name: 'firstName',
+      required: true,
+      label: 'First name',
+      align: 'left',
+      sortable: true,
+      field: (row: PlayerRowTypes) => row.firstName,
+      classes: 'bg-grey-2 ellipsis',
+      headerClasses: 'bg-primary text-white'
+    },
+    {
+      name: 'lastName',
+      align: 'center',
+      label: 'Last name',
+      sortable: true,
+      field: (row: PlayerRowTypes) => row.lastName,
+      classes: 'bg-grey-2 ellipsis',
+      headerClasses: 'bg-primary text-white'
+    },
+    {
+      name: 'rating',
+      align: 'center',
+      label: 'Rating',
+      sortable: true,
+      field: (row: PlayerRowTypes) => row.rating,
+      classes: 'bg-grey-2 ellipsis',
+      headerClasses: 'bg-secondary text-white'
+    },
+  ]
+
+  export default defineComponent({
     name: 'PlayerList',
     props: {
       players: {
@@ -47,39 +78,10 @@
         initialPagination: {
           rowsPerPage: 30
         },
-        columns: [
-          {
-            name: 'firstName',
-            required: true,
-            label: 'First name',
-            align: 'left',
-            sortable: true,
-            field: (row: PlayerRowTypes) => row.firstName,
-            classes: 'bg-grey-2 ellipsis',
-            headerClasses: 'bg-primary text-white'
-          },
-          {
-            name: 'lastName',
-            align: 'center',
-            label: 'Last name',
-            sortable: true,
-            field: (row: PlayerRowTypes) => row.lastName,
-            classes: 'bg-grey-2 ellipsis',
-            headerClasses: 'bg-primary text-white'
-          },
-          {
-            name: 'rating',
-            align: 'center',
-            label: 'Rating',
-            sortable: true,
-            field: (row: PlayerRowTypes) => row.rating,
-            classes: 'bg-grey-2 ellipsis',
-            headerClasses: 'bg-secondary text-white'
-          },
-        ],
+        columns
       }
     }
-  };
+  });
 </script>
 
 <style scoped>
